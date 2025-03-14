@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./navbar.css";
 import logo from "../../assets/logo.png";
 import bellicon from "../../assets/bell_icon.svg";
 import { caretIcon, profileImage, searchIcon } from "../../assets";
 import { logout } from "../../firebase";
 const Navbar = () => {
+  const navRef = useRef();
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY >= 80) {
+        navRef.current.classList.add("dark");
+      } else {
+        navRef.current.classList.remove("dark");
+      }
+    });
+  }, []);
   return (
-    <div className="navbar">
+    <div className="navbar" ref={navRef}>
       <div className="navbar-left">
         <img src={logo} alt="" />
         <ul>

@@ -50,3 +50,7 @@
     font-size: 10px;
   }
 }
+.title {
+  text-decoration: none;
+  color: #fff;
+}

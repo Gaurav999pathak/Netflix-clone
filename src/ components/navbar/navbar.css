@@ -76,6 +76,10 @@
     height: 25px;
   }
 }
+.dark {
+  background: #141414;
+}
+
 @media (max-width: 500px) {
   .navbar img {
     height: 20px;
